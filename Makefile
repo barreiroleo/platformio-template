@@ -34,3 +34,12 @@ uploadfs:
 
 update:
 	pio pkg update
+
+
+.PHONY: monitor-virtual-serial
+monitor-virtual-serial:
+	tmux new-window -n socat-pio \
+	  "socat -d -d pty,raw,echo=0,link=/tmp/ttyS1 pty,raw,echo=0,link=/tmp/ttyS2" \;
+	tmux split-window -v -p 93 -t socat-pio \
+	  "sleep 1; pio device monitor --port /tmp/ttyS1 --baud 9600 --echo --filter time" \;
+	tmux select-pane -U -t socat-pio
