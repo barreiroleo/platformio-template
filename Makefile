@@ -7,7 +7,7 @@ all: gen build test
 
 gen:
 	pio pkg install
-	pio run --target compiledb
+	./generate_compiledb.py
 
 build:
 	pio run -e atmega328p_debug
