@@ -1,3 +1,4 @@
+MAKEFLAGS += --silent
 # Uncomment lines below if you have problems with $PATH
 #SHELL := /bin/bash
 #PATH := /usr/local/bin:$(PATH)
@@ -36,10 +37,18 @@ update:
 	pio pkg update
 
 
-.PHONY: monitor-virtual-serial
+.PHONY: monitor-virtual-serial coverage
 monitor-virtual-serial:
 	tmux new-window -n socat-pio \
 	  "socat -d -d pty,raw,echo=0,link=/tmp/ttyS1 pty,raw,echo=0,link=/tmp/ttyS2" \;
 	tmux split-window -v -p 93 -t socat-pio \
 	  "sleep 1; pio device monitor --port /tmp/ttyS1 --baud 9600 --echo --filter time" \;
 	tmux select-pane -U -t socat-pio
+
+coverage:
+	mkdir -p .coverage/
+	gcovr --filter "src/" --filter "lib/" --decision --calls \
+		--html-block-ids --html-theme github.dark-green --html-details .coverage/index.html \
+		--json-pretty --json .coverage/index.json
+	echo "HTML coverage report generated in ${PWD}/.coverage/index.html"
+	echo "JSON coverage report generated in ${PWD}/.coverage/index.json"
