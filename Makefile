@@ -46,6 +46,7 @@ monitor-virtual-serial:
 	tmux select-pane -U -t socat-pio
 
 coverage:
+	rm -rf .coverage/
 	mkdir -p .coverage/
 	gcovr --filter "src/" --filter "lib/" --decision --calls \
 		--html-block-ids --html-theme github.dark-green --html-details .coverage/index.html \
