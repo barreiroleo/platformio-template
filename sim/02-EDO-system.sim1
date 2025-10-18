@@ -1,6 +1,6 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="SerialPort" CircId="SerialPort-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-444,-124" rotation="0" hflip="1" vflip="1" label="SerialPort-1" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Auto="true" Port="/tmp/ttyS2" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="true" />
+<item itemtype="SerialPort" CircId="SerialPort-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-444,-124" rotation="0" hflip="1" vflip="1" label="SerialPort-1" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Auto="true" Port="/tmp/ttyS2" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
 
 <item itemtype="Subcircuit" CircId="Nano-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-476,-84" rotation="0" hflip="1" vflip="1" label="Nano-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
 <mainCompProps MainCompId="m328 TQFP-269" Frequency="16 MHz" Program="../.pio/build/atmega328p_debug/firmware.hex" Auto_Load="true" saveEepr="true" MainMcu="true" SerialMon="-1" />
@@ -65,6 +65,8 @@
 <item itemtype="Fixed Voltage" CircId="Fixed Voltage-122" mainComp="false" Show_id="false" Show_Val="false" Pos="-468,148" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-122" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
 
 <item itemtype="Switch" CircId="Switch-123" mainComp="false" Show_id="false" Show_Val="false" Pos="-428,148" rotation="0" hflip="1" vflip="1" label="Switch-123" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" DT="false" Poles="1" />
+
+<item itemtype="Rectangle" CircId="Rectangle-125" mainComp="false" Show_id="false" Show_Val="false" Pos="-16,-12" rotation="0" hflip="1" vflip="1" label="Rectangle-125" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="280 _px" V_size="100 _px" Border="2 _px" Z_Value="10" Color="#a0a0a4" Opacity="1" />
 
 <item itemtype="Node" CircId="Node-29" mainComp="false" Pos="-72,-32" />
 
